@@ -1,0 +1,40 @@
+.home-client {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 95vh;
+	position: relative; 
+	text-align: center;
+  }
+  
+  .search-center {
+	display: flex;
+	gap: 15px;
+	width: 500px;
+  }
+  
+  .search-input {
+	padding: 10px;
+	font-size: 16px;
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+  }
+ 
+  .image-right {
+	position: fixed;
+	left: 1043px;
+  }
+  
+  .image-right img {
+	width: 500px; 
+	height: auto;
+	border-radius: 10px; 
+  }
+
+  .search{
+	width: 1500px;
+  }
+
+  

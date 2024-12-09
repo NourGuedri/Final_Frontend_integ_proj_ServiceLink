@@ -1,0 +1,29 @@
+.home-request {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  position: relative;
+  text-align: center;
+}
+
+.buttons-or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+  margin-top: 20px;
+}
+
+.image {
+  position: fixed;
+  left: 1043px;
+  margin-top: 334px;
+}
+
+.image img {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+}

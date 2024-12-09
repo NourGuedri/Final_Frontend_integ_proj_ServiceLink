@@ -1,0 +1,64 @@
+.request-service-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+	background-color: #f9f9f9; /* Optionnel : couleur d'arrière-plan */
+	position: relative; /* Pour permettre de placer les images */
+  }
+  
+  .request-form-section {
+	width: 500px;
+	margin: auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1; /* S'assurer que le formulaire reste au-dessus des images */
+  }
+  
+  .images-section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	pointer-events: none; /* Les images ne bloquent pas les interactions avec le formulaire */
+  }
+  
+  .image-left {
+	position: fixed;
+	bottom: 10px;
+	width: 400px; /* Ajuste la taille si nécessaire */
+	height: auto;
+	
+  }
+  
+  .image-right {
+	position: fixed;
+	bottom: 10px;
+	margin-left: 100px;
+	width: 380px; /* Ajuste la taille si nécessaire */
+	height: auto;
+  }
+
+  .form-actions {
+	display: flex;
+	justify-content: space-between; /* Espace égal entre les boutons */
+	gap: 10px; /* Espace horizontal entre les boutons */
+	margin-top: 20px;
+  }
+  
+  .form-actions .p-button {
+	flex: 1; /* Les boutons prendront une largeur égale */
+	text-align: center; /* Centrer le texte dans les boutons */
+  }
+  
+  .p-button-secondary,
+  .p-button-warning {
+	min-width: 120px; /* Optionnel : largeur minimale pour les petits écrans */
+  }
+
+  

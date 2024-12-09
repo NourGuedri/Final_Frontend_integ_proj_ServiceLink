@@ -1,0 +1,97 @@
+.bur-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 80px;
+	
+	position: absolute;
+	top: 0;
+}
+
+.bur-content {
+	flex: 1;
+	padding-left: 100px; 
+}
+
+.bur-image {
+	flex: 1;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	margin-left: 150px;
+}
+
+.bur-image img {
+	margin-top: 50px ;
+	width: 500px; 
+	height: auto; 
+	border-radius: 10px; 
+}
+
+  .card {
+	display: flex;
+	gap: 10px;
+  }
+  
+  
+  .bur-title {
+	font-size: 48px;
+	color: #333;
+  }
+  
+  .bur-subtitle {
+	font-size: 20px;
+	color: #777;
+	margin-top: 10px;
+	margin-bottom: 30px;
+  }
+  
+  .search-bar {
+	display: flex;
+	gap: 10px;
+  }
+  
+  .search-input {
+	padding: 10px;
+	font-size: 16px;
+	flex: 1;
+	border: 1px solid #ddd;
+	border-radius: 50px;
+  }
+  
+  .search-button {
+	background-color: #f90;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .search-button:hover {
+	background-color: #e68a00;
+  }
+  
+  .stats-section {
+	display: flex;
+	justify-content: space-around;
+	margin: 50px 0;
+	padding: 100px;
+  }
+  
+  .stat-card {
+	text-align: center;
+	padding: 20px;
+  }
+  
+  .stat-card h2 {
+	font-size: 36px;
+	color: #333;
+  }
+  
+  .stat-card p {
+	font-size: 18px;
+	color: #777;
+  }
+  

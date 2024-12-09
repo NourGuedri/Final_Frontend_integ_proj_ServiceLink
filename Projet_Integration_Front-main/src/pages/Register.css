@@ -1,0 +1,30 @@
+.register-container {
+	background-color: red;
+	width: 500px;
+	height: 30%;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background: white;
+	z-index: 1;
+  }
+  .register-page{
+	min-height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la page */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .button{
+	margin-top: 20px;
+	width: 80%;
+  }
+  .resend-button{
+	margin-right: 20px;
+  }
+  .confirm-button{
+	margin-left: 20px;
+	width: 60%;
+  }
