@@ -3,13 +3,12 @@ import Navbar from "../../components/Navbar";
 import "./Orders.css";
 import burrImage from "../../assets/bur.png";
 import { Button } from "primereact/button";
-import NavbarProvider from "../../components/NavbarProvider";
-
+import { Link } from "react-router-dom";
 
 const OrdersList = () => {
   return (
     <div>
-      <NavbarProvider />
+      <Navbar />
       <div className="orders-section">
         <h2>Orders List</h2>
         
@@ -18,7 +17,9 @@ const OrdersList = () => {
           <p>Jun 10, 2014 | 9:41 AM</p>
           <p>50$ - 150$</p>
           <p>Total: 50$</p>
-		  <Button label="View" severity="success" rounded />
+          <Link to="/view-order">
+          <Button label="View" severity="success" rounded />
+          </Link>
         </div>
 
         <div className="order-card">
@@ -26,7 +27,9 @@ const OrdersList = () => {
           <p>Jun 10, 2014 | 9:41 AM</p>
           <p>50$ - 150$</p>
           <p>Total: 50$</p>
-		  <Button label="View" severity="success" rounded />
+          <Link to="/view-order">
+          <Button label="View" severity="success" rounded />
+          </Link>
         </div>
 
         <div className="order-card">
@@ -34,15 +37,19 @@ const OrdersList = () => {
           <p>Jun 10, 2014 | 9:41 AM</p>
           <p>50$ - 150$</p>
           <p>Total: 50$</p>
-		  <Button label="View" severity="success" rounded />
-        </div>
+          <Link to="/view-order">
+          <Button label="View" severity="success" rounded />
+          </Link>        
+          </div>
 
         <div className="order-card">
           <img src={burrImage} alt="Order 4" className="order-image" />
           <p>Jun 10, 2014 | 9:41 AM</p>
           <p>50$ - 150$</p>
           <p>Total: 50$</p>
-		  <Button label="View" severity="success" rounded />
+          <Link to="/view-order">
+          <Button label="View" severity="success" rounded />
+          </Link>
         </div>
 
       </div>

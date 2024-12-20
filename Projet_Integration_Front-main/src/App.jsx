@@ -16,6 +16,9 @@ import PrivateRoute from "./components/PrivateRoute";
 import PageNotFound from "./pages/PageNotFound";
 import EditClientProfile from "./pages/Client/EditClientProfile";
 import NotAuthentificated from "./components/NotAuthentificated";
+import RegisterProvider from "./pages/Provider/RegisterProvider";
+import OrdersList from "./pages/Provider/Orders";
+import OrderDetails from "./pages/Provider/OrderDetails";
 
 function App() {
   return (
