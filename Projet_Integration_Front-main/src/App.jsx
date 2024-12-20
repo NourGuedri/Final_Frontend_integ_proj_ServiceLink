@@ -28,6 +28,9 @@ function App() {
           <Route path="/req-or-brow" element={<ReqOrBrow />} />
           <Route path="/request-service" element={<RequestService />} />
           <Route path="/client-profile" element={<ClientProfile />} />
+          <Route path="/register-provider" element={<RegisterProvider />} />
+          <Route path="/orders-list" element={<OrdersList />} />
+          <Route path="/view-order" element={<OrderDetails />} />
         </Routes>
       </Router>
     </PrimeReactProvider>
