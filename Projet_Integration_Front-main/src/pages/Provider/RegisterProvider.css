@@ -1,0 +1,106 @@
+/* Style pour le container de la page */
+.register-provider-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px;
+	position: relative;
+	margin-left: 18%;
+	margin-right: 20%;
+  }
+  
+  .register-form-section {
+	flex: 1;
+	background-color: #f8f8f8;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-title {
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: #333;
+  }
+  
+  .form-group {
+	margin-bottom: 20px;
+  }
+  
+  .form-group label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: #555;
+  }
+  
+  .form-group input {
+	width: 100%;
+	padding: 12px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+  }
+  
+  .form-actions {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+  }
+  
+  .message {
+	color: red;
+	text-align: center;
+  }
+  
+  .images-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+  }
+  
+  .image-left {
+	position: fixed;
+	bottom: 10px;
+	width: 400px; /* Ajuste la taille si nécessaire */
+	height: auto;
+	
+  }
+  
+  .image-right {
+	position: fixed;
+	bottom: 10px;
+	margin-left: 100px;
+	width: 380px; /* Ajuste la taille si nécessaire */
+	height: auto;
+  }
+  
+  @media (max-width: 768px) {
+	.register-provider-content {
+	  flex-direction: column;
+	}
+  
+	.images-section {
+	  display: none;
+	}
+  
+	.register-form-section {
+	  width: 100%;
+	}
+  }
+
+  .message.success {
+	color: green;
+	font-weight: bold;
+	margin-bottom: 1rem;
+  }
+  
+  .message.error {
+	color: red;
+	font-weight: bold;
+	margin-bottom: 1rem;
+  }
+  
+  

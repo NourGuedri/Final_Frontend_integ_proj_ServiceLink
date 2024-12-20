@@ -1,0 +1,114 @@
+/* Page container for left profile and right order info */
+.order-details-page {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 15px;
+	background-color: #f9f9f9;
+	margin-top: 4%;
+  }
+  
+  .profile-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	padding: 15px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-right: 20px;
+  }
+  
+  .user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  .user-photo {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 10px;
+  }
+  
+  h2 {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 600;
+  }
+  
+  p {
+	margin: 5px 0;
+  }
+  
+  .description-container {
+	width: 100%;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description-input {
+	width: 100%;
+	height: 150px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	resize: none;
+	font-size: 16px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+  }
+  
+  /* Right Section: Order Info */
+  .order-info-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 70%;
+	padding: 4%;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-info-container h2 {
+	font-size: 250%;
+	margin-bottom: 15px;
+	color: rgb(243, 66, 12);
+  }
+  
+  .order-description {
+	margin-bottom: 15px;
+	font-size: 16px;
+	color: #555;
+  }
+  
+  .order-info-container p {
+	margin-bottom: 3%;
+	font-size: 115%;
+  }
+  
+  .order-images {
+	display: flex;
+	gap: 10px;
+  }
+  
+  .order-image {
+	width: 20%;
+	height: 20%;
+	border-radius: 8px;
+	object-fit: cover;
+  }
+  
+  .order-info-container p strong {
+	margin-bottom: 3%;
+	font-size: 120%;
+	color: rgb(24, 28, 244);
+  }
+   

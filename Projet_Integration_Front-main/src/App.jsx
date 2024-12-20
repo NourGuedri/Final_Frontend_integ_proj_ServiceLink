@@ -34,6 +34,9 @@ function App() {
           <Route path="/client-profile" element={<ClientProfile />} />
           <Route path="/edit-client-profile" element={<NotAuthentificated element={EditClientProfile} />}  />
           <Route path="*" element={<PageNotFound />} /> {/* Catch-all route for undefined paths */}
+          <Route path="/register-provider" element={<RegisterProvider />} />
+          <Route path="/orders-list" element={<OrdersList />} />
+          <Route path="/view-order" element={<OrderDetails />} />
         </Routes>
       </Router>
     </PrimeReactProvider>
