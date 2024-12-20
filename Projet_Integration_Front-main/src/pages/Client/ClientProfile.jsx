@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ClientProfile.css';
 import Navbar from '../../components/Navbar';
+import { getUserProfile } from '../../services/ProfileUser';
+import { getClientOrders } from '../../services/ServiceLinkClientService';
+import { Button } from "primereact/button";
+import 'primereact/resources/themes/lara-light-cyan/theme.css';
+import 'primereact/resources/primereact.min.css';
+import {Link} from 'react-router-dom';
 
-const UserProfile = () => {
+const ClientProfile = () => {
+  const [userData, setUserData] = useState(null);
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    async function fetchUserProfile() {
+      try {
+        const data = await getUserProfile();
+        console.log('User profile data:', data);
+        setUserData(data);
+      } catch (error) {
+        console.error('Failed to fetch user profile:', error);
+      }
+    }
+
+    async function fetchClientOrders() {
+      try {
+        const ordersData = await getClientOrders();
+        setOrders(ordersData);
+      } catch (error) {
+        console.error('Failed to fetch client orders:', error);
+      }
+    }
+
+    fetchUserProfile();
+    fetchClientOrders();
+  }, []);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+  const imageUrl = `http://localhost:8000${userData.img}`;
   return (
     <div className="user-profile">
       <Navbar />
@@ -10,48 +47,37 @@ const UserProfile = () => {
         {/* Left Side: User Information */}
         <div className="user-info">
           <img
-            src="https://via.placeholder.com/150"
+            src={imageUrl}
             alt="User"
             className="user-photo"
           />
-          <h2>Ahmed Hammami</h2>
-          <p>Age: 30</p>
-          <p>Phone: +123 456 789</p>
-          <p>Location: City, Country</p>
-          <p>Bio: Lorem ipsum dolor sit amet.</p>
-        </div>
+          <h2>{`${userData.prenom} ${userData.nom}`}</h2>
+          <p>Age: {userData.age}</p>
+          <p>Phone: {userData.phone}</p>
+          <p>Location: {userData.location}</p>
+          <p>Bio: {userData.bio}</p>
+          <Link to="/edit-client-profile">
+          <Button label="Edit Profile" raised outlined className="p-button-warning"  />
+          </Link>        
+          </div>
 
         {/* Right Side: Previous Orders */}
         <div className="orders-section">
           <h2>Previous Orders</h2>
-          <div className="order-card">
-            <p>Jun 10, 2014 | 9:41 AM</p>
-            <p>50$ - 150$</p>
-            <p>Total: 50$</p>
-            <button className="order-status pending">Pending</button>
-          </div>
-          <div className="order-card">
-            <p>Jun 10, 2014 | 9:41 AM</p>
-            <p>50$ - 150$</p>
-            <p>Total: 50$</p>
-            <button className="order-status confirmed">Confirmed</button>
-          </div>
-          <div className="order-card">
-            <p>Jun 10, 2014 | 9:41 AM</p>
-            <p>50$ - 150$</p>
-            <p>Total: 50$</p>
-            <button className="order-status finished">Finished</button>
-          </div>
-          <div className="order-card">
-            <p>Jun 10, 2014 | 9:41 AM</p>
-            <p>50$ - 150$</p>
-            <p>Total: 50$</p>
-            <button className="order-status canceled">Canceled</button>
-          </div>
+          {orders.map(order => (
+            <div key={order.id} className="order-card">
+              <p>{new Date(order.created_at).toLocaleString()}</p>
+              <p>{order.proposed_price_range_min}$ - {order.proposed_price_range_max}$</p>
+              <p>Final: {order.final_price}$</p>
+              <button className={`order-status ${order.state ? order.state.toLowerCase() : ''}`}>
+                {order.state || 'Unknown'}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default UserProfile;
+export default ClientProfile;

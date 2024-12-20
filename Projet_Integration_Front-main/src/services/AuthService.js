@@ -150,6 +150,24 @@ export const registerUser = async (password, passwordConfirm) => {
   }
 };
 
-export function logout() {
-  localStorage.removeItem("token");
-};
+export async function logout() {
+  try {
+    const response = await fetch('http://localhost:8000/auth/logout/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data.message); // Successfully logged out.
+      localStorage.removeItem('token');
+    } else {
+      console.error('Failed to log out');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}

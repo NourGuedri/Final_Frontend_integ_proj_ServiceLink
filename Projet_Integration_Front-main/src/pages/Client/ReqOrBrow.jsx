@@ -9,6 +9,10 @@ const ReqOrBrow = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const serviceName = queryParams.get('service');
+  const serviceId = queryParams.get('service_id'); // Assuming service_id is also passed in the query parameters
+
+  const hasServiceId = queryParams.has('service_id'); // Check if service_id is present
+  
 
   return (
     <div>
@@ -17,9 +21,13 @@ const ReqOrBrow = () => {
       <h1>{serviceName ? serviceName : "Service"}</h1>
           {/* Conteneur pour les boutons et "Or" */}
         <div className="buttons-or">
-        <Link to="/request-service">
-          <Button label="Request" severity="secondary" raised />
-        </Link>
+        {hasServiceId ? (
+            <Link to={`/request-service?service=${encodeURIComponent(serviceName)}&service_id=${serviceId}`}>
+              <Button label="Request" severity="secondary" raised />
+            </Link>
+          ) : (
+            <p>Service ID is missing</p>
+          )}
           <h2>Or</h2>
           <Button label="Browse" severity="secondary" raised />
         </div>

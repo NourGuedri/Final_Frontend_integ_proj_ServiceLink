@@ -12,22 +12,28 @@ import Register from "./pages/Register";
 import HomeClient from "./pages/Client/HomeClient";
 import ReqOrBrow from "./pages/Client/ReqOrBrow";
 import ClientProfile from "./pages/Client/ClientProfile";
+import PrivateRoute from "./components/PrivateRoute";
+import PageNotFound from "./pages/PageNotFound";
+import EditClientProfile from "./pages/Client/EditClientProfile";
+import NotAuthentificated from "./components/NotAuthentificated";
 
 function App() {
   return (
     <PrimeReactProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<PrivateRoute element={Home} />} />
+          <Route path="/login"  element={<PrivateRoute element={Login} />} />
           <Route path="/register-phone-number" element={<RegisterPhoneNumber />} />
           <Route path="/verify-code" element={<VerifyCode />} />
-          <Route path="/welcome" element={<Home />} />
+          <Route path="/welcome" element={<PrivateRoute element={Home} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home-client" element={<HomeClient />} />
           <Route path="/req-or-brow" element={<ReqOrBrow />} />
-          <Route path="/request-service" element={<RequestService />} />
+          <Route path="/request-service" element={<RequestService/>} />
           <Route path="/client-profile" element={<ClientProfile />} />
+          <Route path="/edit-client-profile" element={<NotAuthentificated element={EditClientProfile} />}  />
+          <Route path="*" element={<PageNotFound />} /> {/* Catch-all route for undefined paths */}
         </Routes>
       </Router>
     </PrimeReactProvider>

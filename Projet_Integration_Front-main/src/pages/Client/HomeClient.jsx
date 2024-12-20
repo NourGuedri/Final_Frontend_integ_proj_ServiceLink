@@ -5,7 +5,7 @@ import { ListBox } from 'primereact/listbox';
 import { Button } from "primereact/button";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchServices } from "../../services/ServiceLinkService";
+import { fetchServices } from "../../services/ServiceLinkClientService";
 
 const HomeClient = () => {
   const [services, setServices] = useState([]);
@@ -41,8 +41,8 @@ const HomeClient = () => {
 
   const handleSearch = () => {
     if (selectedService) {
-      navigate(`/req-or-brow?service=${encodeURIComponent(selectedService.name)}`);
-    }
+      navigate(`/req-or-brow?service=${encodeURIComponent(selectedService.name)}&service_id=${selectedService.id}`);   
+     }
   };
 
   const handleKeyPress = (e) => {
@@ -53,7 +53,7 @@ const HomeClient = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar  state={"home-client"}/>
       <div className="home-client">
         <h1>Welcome!</h1>
         <h1>How can I help you ?</h1>
@@ -67,8 +67,15 @@ const HomeClient = () => {
             onChange={handleServiceSelect}
             onKeyPress={handleKeyPress}
           />
-          <Button label="Search" onClick={handleSearch} />
+          <div>
+            
+          <Button severity="warning" label="Search" onClick={handleSearch} style={{ fontSize: '20px', padding: '20px 20px' }} />
+          
+          </div>
+
         </div>
+        
+
         <div className="image-right">
           <img src={burrImage} alt="Right" />
         </div>

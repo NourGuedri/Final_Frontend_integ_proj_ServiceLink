@@ -27,7 +27,7 @@ const Home = () => {
       <BackgroundLines svgOptions={{ duration: 3 }}>
         <div className="bur-section">
           <div className="bur-content">
-            <h1 className="bur-title">SERVICES.TN</h1>
+            <h1 className="bur-title">SERVICELINK.TN</h1>
             <p className="bur-subtitle">Quicker, Cheaper, And BETTER</p>
             <div className="search-bar">
               <input
@@ -49,19 +49,19 @@ const Home = () => {
         </div>
         <div className="stats-section">
           <Card
-            title="000"
+            title="3000"
             subTitle="Service requests"
             className="md:w-25rem"
           ></Card>
 
           <Card
-            title="000"
+            title="500"
             subTitle="Client Satisfaction"
             className="md:w-25rem"
           ></Card>
 
           <Card
-            title="000"
+            title="10009DT"
             subTitle="Payment"
             className="md:w-25rem"
           ></Card>
