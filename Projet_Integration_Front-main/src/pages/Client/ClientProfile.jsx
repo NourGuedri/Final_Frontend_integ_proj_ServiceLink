@@ -37,7 +37,9 @@ const ClientProfile = () => {
   if (!userData) {
     return <div>Loading...</div>;
   }
-  const imageUrl = `http://localhost:8000${userData.img}`;
+  const imageUrl = `${import.meta.env.VITE_API_URL}${userData.img}`;
+  console.log(imageUrl);
+  
   return (
     <div className="user-profile-client">
       <Navbar />
