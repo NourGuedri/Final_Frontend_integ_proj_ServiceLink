@@ -1,8 +1,10 @@
 .orders-section {
 	flex-direction: column;
 	align-items: center;  /* Centrer horizontalement */
+
 	margin-top: 3%;
-	margin-left: 20%;
+  margin: 10%;
+  width: 70%;
   }
 .order-image {
   width: 80px; /* Taille de l'image */
@@ -10,4 +12,11 @@
   border-radius: 50%; /* Rendre les images circulaires */
   margin-right: 20px; /* Espacement entre l'image et le contenu texte */
   object-fit: cover; /* Adapter l'image à la taille définie */
+}
+.order-card{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
