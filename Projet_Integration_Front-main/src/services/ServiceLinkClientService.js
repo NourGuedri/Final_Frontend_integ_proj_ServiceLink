@@ -1,8 +1,11 @@
 // src/services/ServiceService.js
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export const fetchServices = async (token) => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/service/list_service/", {
+    const response = await fetch(`${API_BASE_URL}/service/list_service/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -31,7 +34,7 @@ export const fetchServices = async (token) => {
 export async function createOrder(formData) {
   try {
     console.log('FormData entries:', Array.from(formData.entries())); // Log form data entries
-    const response = await fetch('http://127.0.0.1:8000/service/create_order/', {
+    const response = await fetch(`${API_BASE_URL}/service/create_order/`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -55,7 +58,7 @@ export async function createOrder(formData) {
 
 export async function getClientOrders() {
   try {
-    const response = await fetch('http://127.0.0.1:8000/service/list_orders/', {
+    const response = await fetch(`${API_BASE_URL}/service/list_orders/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

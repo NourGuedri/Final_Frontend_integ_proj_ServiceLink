@@ -1,6 +1,10 @@
+
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export async function fetchServices(token) {
 	try {
-	  const response = await fetch("http://127.0.0.1:8000/service/list_service/", {
+	  const response = await fetch(`${API_BASE_URL}/service/list_service/`, {
 		method: "GET",
 		headers: {
 		  "Authorization": `Bearer ${token}`, // Ajouter le jeton d'authentification
@@ -24,7 +28,7 @@ export async function fetchServices(token) {
   
 // Exemple de la fonction createProviderRequest
 export const createProviderRequest = async (formData, token) => {
-	const response = await fetch("http://127.0.0.1:8000/provider/create/", {
+	const response = await fetch(`${API_BASE_URL}/provider/create/`, {
 	  method: "POST",
 	  headers: {
 		"Authorization": `Bearer ${token}`, // Si vous utilisez un token pour l'authentification
