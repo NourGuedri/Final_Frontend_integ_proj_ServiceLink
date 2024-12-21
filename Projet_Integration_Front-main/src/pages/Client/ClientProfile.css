@@ -3,24 +3,32 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  .user-profile {
+  .user-profile-client {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
   
-  .profile-container {
+  .client-profile-container {
     display: flex;
-    justify-content: space-between;
-    padding: 10%;
+    direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+
   }
   
-  .user-info {
+  .user-info-client {
     width: 35%;
-    padding: 2%;
     background-color: #f9f9f9;
     border-radius: 8px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50%;
   }
   
   .user-photo {
@@ -29,18 +37,18 @@ body {
     margin-bottom: 1rem;
   }
   
-  .orders-section {
-    width: 60%;
+  .orders-section-client {
+    width: 50%;
     padding: 2%;
     background-color: #ffffff;
     border-radius: 8px;
   }
   
-  .orders-section h2 {
+  .orders-section-Client h2 {
     margin-bottom: 1rem;
   }
-  
-  .order-card {
+   
+  .order-card-client {
     display: flex;
     justify-content: space-between;
     align-items: center;

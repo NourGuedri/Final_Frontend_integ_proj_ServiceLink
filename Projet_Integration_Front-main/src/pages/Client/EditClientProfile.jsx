@@ -39,19 +39,20 @@ const EditClientProfile = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {};
-    formData['id'] = parseInt( id);
-    formData['prenom'] = firstName;     
-    formData['nom'] = lastName;
-    formData['age'] = parseInt(age);
-    formData['phone'] = phone;
-    formData['location'] = location;
-    formData['bio'] = bio;
-
+  
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('prenom', firstName);
+    formData.append('nom', lastName);
+    formData.append('age', age);
+    formData.append('phone', phone);
+    formData.append('location', location);
+    formData.append('bio', bio);
+  
     if (image) {
-        formData['img'] = image;
+      formData.append('img', image); // Add the image file
     }
-console.log(formData);
+  
     try {
       await updateUserProfile(formData);
       navigate('/client-profile'); // Redirect to ClientProfile page
@@ -59,6 +60,7 @@ console.log(formData);
       console.error('Failed to update user profile:', error);
     }
   };
+  
 
 
 
@@ -68,7 +70,7 @@ console.log(formData);
       <div className="profile-content">
         <div className="profile-form-section">
           <h1 className="profile-title">Personalize Your Profile</h1>
-          <form className="profile-form" onSubmit={handleSubmit} encType="multipart/form-data">
+          <form className="profile-form" onSubmit={handleSubmit} >
             <div className="form-group">
               <label>Profile Image</label>
               <input type="file" accept="image/*" onChange={(e)=>setImage(e.target.files[0])} />

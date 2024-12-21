@@ -1,8 +1,9 @@
 // src/services/ProfileUser.js
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getUserProfile() {
   try {
-    const response = await fetch('http://127.0.0.1:8000/auth/profile/', {
+    const response = await fetch(`${API_URL}/auth/profile/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -20,24 +21,22 @@ export async function getUserProfile() {
     throw error;
   }
 }
-
 export async function updateUserProfile(profileData) {
   try {
-    console.log('Updating profile with data:', profileData); // Debugging information
-    const response = await fetch('http://127.0.0.1:8000/auth/update_profile/', {
-      method: 'PATCH', // Use PUT method
+    const response = await fetch(`${API_URL}/auth/update_profile/`, {
+      method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        
       },
-      body: JSON.stringify(profileData)
+      body: profileData, // Send the FormData object directly
     });
 
     if (response.ok) {
       return await response.json();
     } else {
       const errorData = await response.json();
-      console.error('Error data:', errorData); // Debugging information
+      console.error('Error data:', errorData);
       throw new Error('Failed to update user profile');
     }
   } catch (error) {

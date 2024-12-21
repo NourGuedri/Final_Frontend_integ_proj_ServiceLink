@@ -41,8 +41,8 @@ function Navbar({ state }) {
         <h1>ServiceLink</h1> 
         {isLoggedIn && (
           <ToggleButton 
-            onLabel="Provider" 
-            offLabel="Client" 
+            onLabel="Switch to Client" 
+            offLabel=" Switch to Provider" 
             onIcon="pi pi-check" 
             offIcon="pi pi-times" 
             checked={checked2} 
