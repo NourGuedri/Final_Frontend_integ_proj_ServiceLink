@@ -5,7 +5,7 @@ import "./Home.css";
 import burImage from "../assets/bur.png";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
-import { BackgroundLines } from "../components/ui/background-lines.jsx";
+import { BackgroundLines } from "../components/ui/Background-lines.jsx";
 import { Link } from "react-router-dom";
 
 const Home = () => {
